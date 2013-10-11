@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO; // Required for IO manipulation
 
 namespace Speed_Converter
 {
@@ -31,22 +32,41 @@ namespace Speed_Converter
             double mph; // Miles per hour
             int count = 0; // Counter
 
+            StreamReader inputFile;
+            StreamWriter outputFile; // StreamWriter variable to manipulate file
+            string results;
+
+            // Create text file
+            inputFile = File.OpenText("Speed.txt");
+
             // Display the table of speeds
             for (kph = START_SPEED; kph <= END_SPEED; kph += INTERVAL)
             {
                 // Calculate miles per hour
-                mph = kph * CONVERSION_FACTOR;
+                // mph = kph * CONVERSION_FACTOR;
 
                 // Display the conversion
-                presortListBox.Items.Add(kph + " KPH is the same as " + mph + " MPH");
+                // presortListBox.Items.Add(kph + " KPH is the same as " + mph + " MPH");
+                // results = inputFile.ReadLine();
+                presortListBox.Items.Add(inputFile.ReadLine());
                 count++;
             }
+
+            inputFile.Close();
+
+            outputFile = File.AppendText("Speed.txt");
 
             // Show result in reverse order. 
             for (count--; count >= 0; count--)
             {
                 outputListBox.Items.Add(presortListBox.Items[count].ToString());
+
+                // Write the contents of presortListBox to the text file
+                outputFile.WriteLine(presortListBox.Items[count].ToString());
             }
+
+            // Close file
+            outputFile.Close();
         }
 
         private void exitButton_Click(object sender, EventArgs e)
@@ -68,6 +88,29 @@ namespace Speed_Converter
                     outputListBox.SetSelected(index, true); // Selected string value
                 else
                     MessageBox.Show("The search string did not find any results.");
+            }
+        }
+
+        private void saveAsButton_Click(object sender, EventArgs e)
+        {
+            StreamWriter outputFile;
+            int count = 0;
+
+            if (saveFile.ShowDialog() == DialogResult.OK)
+            {
+
+                outputFile = File.CreateText(openFile.FileName);
+                for (count--; count >= 0; count--)
+                {
+                    outputListBox.Items.Add(presortListBox.Items[count].ToString());
+
+                    // Write the contents of presortListBox to the text file
+                    outputFile.WriteLine(presortListBox.Items);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Operation canceled.");
             }
         }
     }

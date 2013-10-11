@@ -35,6 +35,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.searchTextBox = new System.Windows.Forms.TextBox();
             this.searchButton = new System.Windows.Forms.Button();
+            this.saveAsButton = new System.Windows.Forms.Button();
+            this.saveFile = new System.Windows.Forms.SaveFileDialog();
+            this.openFile = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // outputListBox
@@ -49,7 +52,7 @@
             // 
             this.displayButton.Location = new System.Drawing.Point(17, 258);
             this.displayButton.Name = "displayButton";
-            this.displayButton.Size = new System.Drawing.Size(123, 35);
+            this.displayButton.Size = new System.Drawing.Size(80, 35);
             this.displayButton.TabIndex = 1;
             this.displayButton.Text = "&Display Speeds";
             this.displayButton.UseVisualStyleBackColor = true;
@@ -57,9 +60,9 @@
             // 
             // exitButton
             // 
-            this.exitButton.Location = new System.Drawing.Point(146, 258);
+            this.exitButton.Location = new System.Drawing.Point(189, 258);
             this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(126, 35);
+            this.exitButton.Size = new System.Drawing.Size(80, 35);
             this.exitButton.TabIndex = 2;
             this.exitButton.Text = "&Exit";
             this.exitButton.UseVisualStyleBackColor = true;
@@ -100,11 +103,26 @@
             this.searchButton.UseVisualStyleBackColor = true;
             this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
+            // saveAsButton
+            // 
+            this.saveAsButton.Location = new System.Drawing.Point(103, 258);
+            this.saveAsButton.Name = "saveAsButton";
+            this.saveAsButton.Size = new System.Drawing.Size(80, 35);
+            this.saveAsButton.TabIndex = 7;
+            this.saveAsButton.Text = "&Save As...";
+            this.saveAsButton.UseVisualStyleBackColor = true;
+            this.saveAsButton.Click += new System.EventHandler(this.saveAsButton_Click);
+            // 
+            // openFile
+            // 
+            this.openFile.FileName = "openFileDialog1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(285, 303);
+            this.Controls.Add(this.saveAsButton);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.searchTextBox);
             this.Controls.Add(this.label1);
@@ -128,6 +146,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox searchTextBox;
         private System.Windows.Forms.Button searchButton;
+        private System.Windows.Forms.Button saveAsButton;
+        private System.Windows.Forms.SaveFileDialog saveFile;
+        private System.Windows.Forms.OpenFileDialog openFile;
     }
 }
 
