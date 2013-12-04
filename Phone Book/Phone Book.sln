@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phone Book", "Phone Book\Phone Book.csproj", "{3B6B0D82-3D6A-4AFC-8519-F4E4AE4B094B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3B6B0D82-3D6A-4AFC-8519-F4E4AE4B094B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B6B0D82-3D6A-4AFC-8519-F4E4AE4B094B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B6B0D82-3D6A-4AFC-8519-F4E4AE4B094B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B6B0D82-3D6A-4AFC-8519-F4E4AE4B094B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
